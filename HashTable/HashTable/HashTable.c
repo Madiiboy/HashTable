@@ -4,6 +4,7 @@
 #include<assert.h>
 #include<stdlib.h>
 #include<stdio.h>
+#include "list.h"
 
 #define UNUSED 0	// Anvands for att markera en ledig plats i Hashtabellen
 
@@ -26,7 +27,7 @@ HashTable createHashTable(unsigned int size)
 
 	for (i = 0; i < size; i++) 
 	{
-		htable.table[i] = createEmptyList();
+		htable.table[i] = NULL;
 	}
 
 	return htable;
@@ -50,9 +51,8 @@ void insertElement(HashTable* htable, const Key key, const Value value)
 	{
 		addLast(&htable->table[index], person);
 	}
+	
 
-	htable->table[index]->data.key = person.key;
-	htable->table[index]->data.value = person.value;
 	
 	// Postcondition: det finns ett element for key i tabellen (anvand lookup() for att verifiera)
 }
@@ -61,7 +61,7 @@ void insertElement(HashTable* htable, const Key key, const Value value)
 void deleteElement(HashTable* htable, const Key key)
 {
 	int index = hash(key, htable->size);
-	if (htable->table[index]->data.key != NULL)
+	if (htable->table[index] != NULL)			//if (htable->table[index]->data.key != NULL)???
 	{
 		Data toRemove; 
 		toRemove.key = key;
@@ -118,7 +118,6 @@ void printHashTable(const HashTable* htable)
 			person = person->next;
 		}
 		//skriver ut varje person i listan interaktivt istället för rekursivt
-		
 		//här ska funktionen kallas
 	}
 	// Tips: anvand printPerson() i Person.h for att skriva ut en person

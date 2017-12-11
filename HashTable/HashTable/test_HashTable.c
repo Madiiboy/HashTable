@@ -53,6 +53,7 @@ void test(unsigned int tableSize)
         personalNumbers[i] = personalNumber;
     }
     
+	printHashTable(&htable);
     // Ta bort nagra existerande personer fran tabellen
     for (i = 0; i < 10; i++)
     {

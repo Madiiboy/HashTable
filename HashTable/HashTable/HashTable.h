@@ -2,7 +2,7 @@
 #define HASHTABLE_H
 
 #include "Bucket.h"
-#include "List.h" // Avkommentera denna rad ifall du vill implementera Hashtabellen med lankade listor
+#include "list.h" // Avkommentera denna rad ifall du vill implementera Hashtabellen med lankade listor
 
 typedef struct 
 {

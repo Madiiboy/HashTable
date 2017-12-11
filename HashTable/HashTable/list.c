@@ -53,7 +53,6 @@ void addFirst(List *list, const Data data)
 		*list = newFirst;
 		return;
 	}
-
 	else						//om listan är tom, dvs att head pekar på null skapas en ny nod. 
 	{
 		newFirst->next = *list;
@@ -93,14 +92,11 @@ void removeFirst(List *list)
 {
 	assert(*list != NULL);
     //Glom inte att frigora minnet for den nod som lankas ur listan.
-	if (*list == NULL)
-	{
-		return;
-	}
-	List tempList = NULL;
+	
+	List tempList;
 	tempList = *list;
 	*list = (*list)->next;
-	free(tempList);
+//	free(tempList);
 	//tempList = NULL;
     //Tank pa att listans huvud efter bortlankningen maste peka pa den nod som nu ar forst.
 }
@@ -151,14 +147,14 @@ void removeLast(List *list)
   Tips, nar du hittar ratt nod kan du anvanda en av de ovanstaende funktionerna for att ta bort noden*/
 int removeElement(List *list, const Data data)
 {
-	if ((*list)->data.key == data.key)
+	if ((*list)->data.key == data.key) 
 	{
-		removeFirst(list);
+		removeFirst(list); //kolla
 		return 1;
 	}
 	if ((*list)->next == NULL)
 	{
-    return 0; //Ersatt med ratt returvarde
+		return 0; //Ersatt med ratt returvarde
 	}
 	else
 	{
@@ -240,7 +236,7 @@ Data getFirstElement(const List list)
 
 /*Returnera sista datat i listan
   Precondition: listan ar inte tom (testa med assert)*/
-Data getLastElement(const List list)						//ej klar
+/*Data getLastElement(const List list)						//ej klar
 {
 	assert(list != NULL);
 
@@ -251,4 +247,4 @@ Data getLastElement(const List list)						//ej klar
 
 
     
-}
+}*/
