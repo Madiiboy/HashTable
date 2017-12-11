@@ -1,0 +1,6 @@
+﻿  HashTable.c
+c:\users\mats\desktop\doa\hashtable\hashtable\hashtable.c(25): warning C4047: '=': 'List *' differs in levels of indirection from 'node *'
+c:\users\mats\desktop\doa\hashtable\hashtable\hashtable.c(27): warning C4018: '<': signed/unsigned mismatch
+c:\users\mats\desktop\doa\hashtable\hashtable\hashtable.c(64): warning C4047: '!=': 'Key' differs in levels of indirection from 'void *'
+c:\users\mats\desktop\doa\hashtable\hashtable\hashtable.c(111): warning C4018: '<': signed/unsigned mismatch
+  HashTable.vcxproj -> C:\Users\Mats\Desktop\DoA\HashTable\Debug\HashTable.exe
